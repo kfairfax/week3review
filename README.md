@@ -9,7 +9,12 @@ create .env file
 add your connection string as a variable like so
 CONNECTION_STRING=//ENTER YOUR CONNECTION STRING HERE
 
-Step 1:
+Step 3:
 copy seed file to SQL tabs to create product table
+
+step 4: 
+make edit and delete buttons function.
+
+
 
 # week3review
