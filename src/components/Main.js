@@ -2,6 +2,14 @@ import React, { Component } from 'react';
 import axios from 'axios'
 import Product from './Product'
 
+const styles = {
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'center',
+  alignItems: 'center',
+  margin:'10px'
+}
+
 export default class Main extends Component {
   constructor(props) {
     super(props);
@@ -19,7 +27,6 @@ export default class Main extends Component {
   }
   
   render() {
-    console.log(this.state)
     let mappedProducts = this.state.products.map(e=>{
       return(
         <Product
@@ -29,7 +36,7 @@ export default class Main extends Component {
       )
     })
     return (
-      <div>
+      <div style={styles}>
         {mappedProducts}
       </div>
     )
