@@ -12,5 +12,14 @@ module.exports = {
         db.add_product([itemInput,priceInput,quantityInput])
             .then(products => res.status(200).send(products))
             .catch(() => res.status(500).send())
+    },
+
+    deleteProduct: (req,res)=>{
+        const db = req.app.get('db');
+        const{id}=req.params;
+        console.log(id)
+        db.delete_product([id])
+        .then((products)=> res.status(200).send(products))
+        .catch(()=>res.status(500).send())
     }
 }

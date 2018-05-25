@@ -10,6 +10,7 @@ massive(process.env.CONNECTION_STRING).then(db => app.set('db', db))
 
 app.get('/api/products', ctrl.getAll)
 app.post('/api/products', ctrl.addProduct)
+app.delete('/api/products/:id', ctrl.deleteProduct)
 
 const port = 5678
 app.listen(port, () => console.log(`server is listening on port ${port}`))

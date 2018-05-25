@@ -19,7 +19,17 @@ export default class Main extends Component {
       priceInput: '',
       quantityInput: '',
     }
+    this.deleteProduct=this.deleteProduct.bind(this);
   }
+
+  deleteProduct(id){
+    axios.delete(`/api/products/${id}`).then((res)=>{
+    this.setState({
+      products: res.data
+    })
+  })
+  }
+
 
   componentDidMount() {
     axios.get('/api/products').then((res) => {
@@ -56,9 +66,11 @@ export default class Main extends Component {
       return (
         <div key={i}>
           <Product
+          id={e.id}
             product={e.item}
             price={e.price}
             quantity={e.quantity}
+            deleteProduct={this.deleteProduct}
           />
         </div>
       )
